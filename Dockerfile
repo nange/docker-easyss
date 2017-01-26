@@ -1,7 +1,7 @@
 # shadowsocks server 
 # usage:
 # 
-# docker run -it -d --name ss-server -p 2025:2025 nange/docker-shadowsocks-go -k yourpassword -m aes-256-cfb
+# docker run -it -d --name ss-server -p 2025:2025 nange/docker-shadowsocks-go:latest -k yourpassword -m aes-256-cfb
 #
 
 FROM ubuntu:16.04
