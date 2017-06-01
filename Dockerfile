@@ -4,15 +4,17 @@
 # docker run -it -d --name ss-server -p 2025:2025 nange/docker-shadowsocks-go:latest -k yourpassword -m aes-256-cfb
 #
 
-FROM ubuntu:16.04
+FROM alpine:latest
 
 LABEL maintainer=LanceLi
 
 WORKDIR /tmp
 
-RUN apt update && apt install -y wget && apt install -y tar
+RUN apk update
 
-RUN wget https://github.com/shadowsocks/shadowsocks-go/releases/download/1.2.1/shadowsocks-server.tar.gz
+RUN apk add openssl
+
+RUN wget "https://github.com/shadowsocks/shadowsocks-go/releases/download/1.2.1/shadowsocks-server.tar.gz"
 
 RUN tar zxvf shadowsocks-server.tar.gz && rm shadowsocks-server.tar.gz
 
