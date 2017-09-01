@@ -1,8 +1,8 @@
-# docker-shadowsocks-go
-shadowsocks-go Dockerfile，基于https://github.com/shadowsocks/shadowsocks-go 二进制构建。
+# docker-easyss
+Easyss Dockerfile，基于https://github.com/nange/easyss 二进制构建。
 
 ## 使用方法
 
-docker run -it -d --name ss-server -p 2025:2025 nange/docker-shadowsocks-go:latest -k yourpassword -m aes-256-cfb
+docker run -it -d --name easyss -p 8080:8080 nange/docker-easyss:latest -k yourpassword -p 8080
 
-目前最新版本是1.2.1,会持续更新最新版本发布。
+目前最新版本是beta2,会持续更新最新版本发布。
