@@ -1,7 +1,7 @@
-# shadowsocks server 
+# easyss server 
 # usage:
 # 
-# docker run -it -d --name ss-server -p 2025:2025 nange/docker-shadowsocks-go:latest -k yourpassword -m aes-256-cfb
+# docker run -it -d --name easyss -p 8080:8080 nange/docke-easyss:latest -p 8080 -k yourpassword
 #
 
 FROM alpine:latest
@@ -12,17 +12,15 @@ WORKDIR /tmp
 
 RUN apk update
 
-RUN apk add openssl
+RUN apk add zip
 
-RUN wget "https://github.com/shadowsocks/shadowsocks-go/releases/download/1.2.1/shadowsocks-server.tar.gz"
+RUN wget "https://github.com/nange/easyss/releases/download/beta2/easyss-linux64.zip"
 
-RUN tar zxvf shadowsocks-server.tar.gz && rm shadowsocks-server.tar.gz
+RUN unzip easyss-linux64.zip && rm easyss-linux64.zip
 
-RUN mkdir -p /opt/ss-server
+RUN mkdir -p /opt/easyss
 
-RUN mv ./shadowsocks-server /opt/ss-server
+RUN mv ./easyss /opt/easyss
 
-EXPOSE 2025
-
-ENTRYPOINT ["/opt/ss-server/shadowsocks-server", "-p", "2025", "-t", "3000"]
+ENTRYPOINT ["/opt/easyss/easyss", "-server"]
 
