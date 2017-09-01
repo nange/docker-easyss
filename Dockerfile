@@ -14,6 +14,8 @@ RUN apk update
 
 RUN apk add zip
 
+RUN apk add openssl
+
 RUN wget "https://github.com/nange/easyss/releases/download/beta2/easyss-linux64.zip"
 
 RUN unzip easyss-linux64.zip && rm easyss-linux64.zip
