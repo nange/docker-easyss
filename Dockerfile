@@ -4,17 +4,15 @@
 # docker run -it -d --name easyss -p 8080:8080 nange/docke-easyss:latest -p 8080 -k yourpassword
 #
 
-FROM alpine:latest
+FROM ubuntu:latest
 
 LABEL maintainer=LanceLi
 
 WORKDIR /tmp
 
-RUN apk update
+RUN apt update
 
-RUN apk add zip
-
-RUN apk add openssl
+RUN apt install zip && apt install wget
 
 RUN wget "https://github.com/nange/easyss/releases/download/beta2/easyss-linux64.zip"
 
