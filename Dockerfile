@@ -1,7 +1,7 @@
 # easyss server 
 # usage:
 # 
-# docker run -it -d --name easyss -p 8080:8080 nange/docker-easyss:beta2 -p 8080 -k yourpassword
+# docker run -it -d --name easyss -p 8080:8080 nange/docker-easyss:rc1 -p 8080 -k yourpassword
 #
 
 FROM ubuntu:latest
@@ -14,7 +14,7 @@ RUN apt update
 
 RUN apt install -y zip wget libgtk-3-dev libappindicator3-dev
 
-RUN wget "https://github.com/nange/easyss/releases/download/beta2/easyss-linux64.zip"
+RUN wget "https://github.com/nange/easyss/releases/download/rc1/easyss-linux64.zip"
 
 RUN unzip easyss-linux64.zip && rm easyss-linux64.zip
 
