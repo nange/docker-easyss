@@ -1,7 +1,7 @@
 # easyss server 
 # usage:
 # 
-# docker run -it -d --name easyss -p 8080:8080 nange/docker-easyss:latest -p 8080 -k yourpassword -t yourdomain.com
+# docker run -it -d --name easyss -p 8080:8080 nange/docker-easyss:latest -p 8080 -k yourpassword -s yourdomain.com
 #
 
 FROM ubuntu:latest
